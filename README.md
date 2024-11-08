@@ -1,10 +1,10 @@
 # howtopage
 
-🌐 |- how to program🤔 の公式ウェブサイトの公式リポジトリです。
+🌐 &VerticalLine;- how to program🤔 の公式ウェブサイトの公式リポジトリです。
 
 ## このリポジトリについて
 
-このリポジトリは、[🌐 |- how to program🤔](https://howtoprogram.f5.si)の公式ウェブサイトのソースコードを管理しています。
+このリポジトリは、[🌐 &VerticalLine;- how to program🤔](https://howtoprogram.f5.si)の公式ウェブサイトのソースコードを管理しています。
 
 ## ライセンス
 

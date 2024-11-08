@@ -1,0 +1,15 @@
+span {
+  display: inline-block;
+}
+
+body {
+  background-color: white;
+  color: black;
+  font-family: "noto-sans", sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+body main {
+  flex-grow: 1;
+}
