@@ -1,0 +1,19 @@
+$main_background_color: #0066cc;
+$main_text_color: #ffffff;
+$button_background_color: #333399;
+$thinking_emoji_color: #ffcc00;
+
+span {
+    display: inline-block;
+}
+body {
+    background-color: white;
+    color: black;
+    font-family: 'noto-sans', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    main {
+        flex-grow: 1;
+    }
+}

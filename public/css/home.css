@@ -1,0 +1,28 @@
+body .loading__img {
+  width: 100vw;
+  max-width: 400px;
+  margin: 2rem 0;
+  display: none;
+}
+body main {
+  width: 100%;
+  background-color: #0066cc;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body main section {
+  width: calc(100% - 2rem);
+  max-width: 800px;
+  margin: 2rem 0;
+  padding: 1rem;
+}
+body main section h2 {
+  font-size: 2rem;
+  margin: 1rem 0;
+}
+body main section p {
+  font-size: 1.5rem;
+  margin: 1rem 0;
+}
