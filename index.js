@@ -83,5 +83,5 @@ const server = http.createServer((req, res) => {
 });
 
 server.listen(25505, () => {
-    console.log('Server started on https://howtoprogram.f5.si');
+    console.log('Server started on https://howtoprogram.net');
 });
