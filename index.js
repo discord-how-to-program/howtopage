@@ -15,7 +15,7 @@ const server = http.createServer((req, res) => {
     })();
     let userAgent = req.headers['user-agent'];
     let date = new Date().toISOString();
-    let log = `${date}に${ipAddress}から${method}で${url}へのアクセスが要求されたにゃ${userAgent}というアプリケーションを使用していたにゃん！\n`;
+    let log = `${date} に ${ipAddress} から ${method} で ${url} へのアクセスが要求されたにゃ ${userAgent} というアプリケーションを使用していたにゃん！\n`;
     console.log(log);
     fs.appendFile('private/access.log', log, (err) => {
         if (err) console.error(err);
@@ -29,11 +29,16 @@ const server = http.createServer((req, res) => {
         });
         res.end();
     }
+    else if (method === 'HEAD') {
+        res.writeHead(200);
+        res.end();
+    }
     else if (method === 'GET') {
-        if (url.endsWith('/') || !url.split('/').splice(-1)[0].includes('.')) url += 'index.html';
-        fs.readFile('public' + url, (err, data) => {
+        if (!url.split('/').splice(-1)[0].includes('.')) url += '/';
+        if (url.endsWith('/')) url += 'index.html';
+        fs.readFile('public' + url, async (err, data) => {
             if (err) {
-                res.writeHead(404, { 'Content-Type': 'text/html' });
+                res.writeHead(200, { 'Content-Type': 'text/html' });
                 res.write(fs.readFileSync('public/404.html'));
                 res.end();
             } else {
@@ -57,7 +62,7 @@ const server = http.createServer((req, res) => {
         req.on('end', () => {
             try {
                 let data = JSON.parse(body);
-                let dataLog = `${ipAddress}からPOST通信でデータが送られてきたにゃ！\n${body}というデータを受け取ったにゃん！\n`;
+                let dataLog = `${ipAddress} からPOST通信でデータが送られてきたにゃ！\n${body} というデータを受け取ったにゃん！\n`;
                 console.log(dataLog);
                 fs.appendFile('private/access.log', dataLog, (err) => { if (err) console.error(err); });
                 let response = {
